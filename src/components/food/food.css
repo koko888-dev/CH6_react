@@ -1,0 +1,167 @@
+/* src/components/food/food.css */
+
+.food-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.food-card {
+  border: 1px solid #a8c39e;
+  background-color: #ffffff;
+  padding: 24px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.food-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8faf7;
+  border: 1px solid #d3e2ce;
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.mode-badge {
+  color: #2e5a1c;
+  font-weight: 600;
+}
+
+.btn-toggle-mode {
+  padding: 4px 12px;
+  font-size: 13px;
+  border: 1px solid #a8c39e;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-toggle-mode:hover {
+  background-color: #eaf2e8;
+}
+
+.food-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #2b3a26;
+  border-bottom: 2px solid #e2ebd9;
+  padding-bottom: 8px;
+}
+
+.food-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.food-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background-color: #f9fbf8;
+  border: 1px solid #edf3eb;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.food-item-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333333;
+}
+
+.badge-bestseller {
+  font-size: 14px;
+}
+
+.btn-del {
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #dc3545;
+  background: #fff0f1;
+  border: 1px solid #ffccd0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-del:hover {
+  background: #dc3545;
+  color: #ffffff;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #e2ebd9;
+  margin: 20px 0;
+}
+
+.food-form-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #2b3a26;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.form-group label {
+  color: #4a5d43;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  padding: 6px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 170px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 9px 0;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add:hover {
+  background-color: #45a049;
+}

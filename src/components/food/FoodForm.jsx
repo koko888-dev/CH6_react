@@ -25,9 +25,9 @@ const FoodForm = ({ addItem }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div style={{ marginBottom: '8px' }}>New Food</div>
-      <div style={{ marginBottom: '4px' }}>
-        <label>name : </label>
+      <div className="food-form-title">New Food</div>
+      <div className="form-group">
+        <label>name :</label>
         <input 
           type="text" 
           name="name" 
@@ -35,8 +35,8 @@ const FoodForm = ({ addItem }) => {
           onChange={handleChange} 
         />
       </div>
-      <div style={{ marginBottom: '4px' }}>
-        <label>price : </label>
+      <div className="form-group">
+        <label>price :</label>
         <input 
           type="number" 
           name="price" 
@@ -44,8 +44,8 @@ const FoodForm = ({ addItem }) => {
           onChange={handleChange} 
         />
       </div>
-      <div style={{ marginBottom: '8px' }}>
-        <label>Best Seller : </label>
+      <div className="form-group">
+        <label>Best Seller :</label>
         <select 
           name="isBestSeller" 
           value={inputs.isBestSeller} 
@@ -55,7 +55,7 @@ const FoodForm = ({ addItem }) => {
           <option value="false">Normal</option>
         </select>
       </div>
-      <button type="submit" style={{ cursor: 'pointer' }}>
+      <button type="submit" className="btn-add">
         Add menu
       </button>
     </form>

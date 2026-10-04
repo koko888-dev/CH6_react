@@ -1,13 +1,11 @@
 const FoodItem = ({ index, name, price, isBestSeller, deleteItem, mode }) => {
   return (
-    <li style={{ marginBottom: '6px' }}>
-      {name} - {price} baht {isBestSeller && '🏵️'}{' '}
-      {/* แสดงปุ่ม Del เฉพาะใน Admin Mode */}
+    <li className="food-item">
+      <span className="food-item-info">
+        • {name} - {price} baht {isBestSeller && <span className="badge-bestseller">🏵️</span>}
+      </span>
       {mode === 'admin' && (
-        <button 
-          onClick={() => deleteItem(index)}
-          style={{ padding: '0 4px', fontSize: '12px', cursor: 'pointer', marginLeft: '4px' }}
-        >
+        <button onClick={() => deleteItem(index)} className="btn-del">
           Del
         </button>
       )}
