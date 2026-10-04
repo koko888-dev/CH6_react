@@ -1,6 +1,6 @@
 import FoodItem from './FoodItem';
 
-const FoodList = ({ food, deleteItem }) => {
+const FoodList = ({ food, deleteItem, mode }) => {
   return (
     <div>
       <ul style={{ paddingLeft: '20px', margin: 0 }}>
@@ -12,6 +12,7 @@ const FoodList = ({ food, deleteItem }) => {
             price={item.price}
             isBestSeller={item.isBestSeller}
             deleteItem={deleteItem}
+            mode={mode}
           />
         ))}
       </ul>
