@@ -1,43 +1,100 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import Todo1 from './components/todo1/Todo1'
+import FoodContainer from './components/food/FoodContainer'
 import './App.css'
 
 function App() {
-  const [isRed, setIsRed] = useState(true);
-  const [changeTextColor ,setChangeTextColor] = useState(true);
-  const [changeText ,setChangeText] = useState("Hello world");
-  const [count ,setCount] = useState(0);
+  // หน้าปัจจุบัน: 'menu' | 'todo1' | 'food'
+  const [currentPage, setCurrentPage] = useState('menu');
 
+  // ถ้าเลือกหน้า Todo 1
+  if (currentPage === 'todo1') {
+    return (
+      <div style={{ padding: '20px' }}>
+        <button 
+          onClick={() => setCurrentPage('menu')}
+          style={{
+            padding: '8px 16px',
+            marginBottom: '20px',
+            cursor: 'pointer',
+            backgroundColor: '#6c757d',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px'
+          }}
+        >
+          ⬅️ กลับหน้าหลัก
+        </button>
+        <Todo1 />
+      </div>
+    );
+  }
+
+  // ถ้าเลือกหน้า 1. Menu management (FoodContainer)
+  if (currentPage === 'food') {
+    return (
+      <div style={{ padding: '20px' }}>
+        <button 
+          onClick={() => setCurrentPage('menu')}
+          style={{
+            padding: '8px 16px',
+            marginBottom: '20px',
+            cursor: 'pointer',
+            backgroundColor: '#6c757d',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px'
+          }}
+        >
+          ⬅️ กลับหน้าหลัก
+        </button>
+        <FoodContainer />
+      </div>
+    );
+  }
+
+  // หน้าเมนูหลัก (Home / Menu)
   return (
-    <div>
-      <button
-        style={{
-          backgroundColor : isRed ? 'red' :'blue'
-        }}
-        onClick={()=>setIsRed(!isRed)}
-      >{isRed ? 'Go Blue' : 'Go Red'}</button>
+    <div style={{ padding: '40px', textAlign: 'center' }}>
+      <h1>เลือกลองใช้งาน App</h1>
+      <p>กรุณากดเลือกหน้างานที่ต้องการเข้าใช้งาน:</p>
 
-      <hr />
-      <div>
-        <p style={{color : changeTextColor}}>{changeText}</p>
-        <input type = "text" onChange = {(e)=>setChangeText(e.target.value)}></input>
-        <input type = "color" onChange = {(e)=>setChangeTextColor(e.target.value)}></input>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '30px' }}>
+        <button
+          onClick={() => setCurrentPage('todo1')}
+          style={{
+            padding: '15px 30px',
+            fontSize: '18px',
+            cursor: 'pointer',
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px'
+          }}
+        >
+          📌 ไปที่หน้า Todo 1
+        </button>
+
+        <button
+          onClick={() => setCurrentPage('food')}
+          style={{
+            padding: '15px 30px',
+            fontSize: '18px',
+            cursor: 'pointer',
+            backgroundColor: '#28a745',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px'
+          }}
+        >
+          🍔 1. Menu management
+        </button>
       </div>
-      <hr />
-      <div>
-        <h1>{count}</h1>
-        <button onClick={()=>setCount(count+1)}>count up</button>
-        <button onClick={()=>setCount(count-1)}>count down</button>
-        
-      </div>
-
-
     </div>
-    
-
-  )
+  );
 }
 
 export default App
+
+
+
